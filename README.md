@@ -211,6 +211,19 @@ X-Content-Type-Options
 
 ## 2.4/
 
+L’événement listening est déclenché dès que le serveur commence à écouter avec succès sur le port et l’adresse spécifiés. Cela signifie que le serveur est prêt à accepter des connexions entrantes.
 
 
 
+## 2.5/
+
+C’est l'option index qui a comme valeur par défaut index.html du express.static qui fait que l'URL "/" redige vers le fichier index.html
+
+
+
+## 2.6/
+
+Au début avec Ctrl+R le navigateur utilise le cache donc on a une reponse 304 Not Modified,
+alors qu'avec Ctrl+Shift+R on force pour recharge la page et on recois comme reponse 200 OK.
+
+Avec Ctrl+R, le navigateur utilise le cache →réponse 304 Not Modified, tandis qu’avec Ctrl+Shift+R il ignore le cache → réponse 200 OK.
