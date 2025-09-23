@@ -142,3 +142,72 @@ http://localhost:8000/dont-exist   : 404: NOT FOUND
 
 
 
+## 2.1/
+
+express : https://expressjs.com/en/guide/routing.html
+http-errors : https://www.npmjs.com/package/http-errors
+loglevel : https://www.npmjs.com/package/loglevel
+morgan : https://www.npmjs.com/package/morgan
+
+
+
+## 2.2/
+
+http://localhost:5000/
+
+```txt
+HTTP/1.1 304 Not Modified
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Fri, 19 Sep 2025 22:29:41 GMT
+ETag: W/"94-1996418f7b6"
+Date: Tue, 23 Sep 2025 22:02:18 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+http://localhost:5000/random/5
+
+```txt
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 80
+ETag: W/"50-jYJbe9CILQtv1LNftuXg4WHUAtM"
+Date: Tue, 23 Sep 2025 22:16:21 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+http://localhost:5000/test
+
+```txt
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 144
+Date: Tue, 23 Sep 2025 22:04:08 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+Nouveaux en-têtes :
+X-Powered-By
+Content-Security-Policy
+X-Content-Type-Options
+
+
+## 2.3/
+
+
+
+
+
+
+
+
+
+
