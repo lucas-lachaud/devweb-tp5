@@ -225,5 +225,3 @@ C’est l'option index qui a comme valeur par défaut index.html du express.stat
 
 Au début avec Ctrl+R le navigateur utilise le cache donc on a une reponse 304 Not Modified,
 alors qu'avec Ctrl+Shift+R on force pour recharge la page et on recois comme reponse 200 OK.
-
-Avec Ctrl+R, le navigateur utilise le cache →réponse 304 Not Modified, tandis qu’avec Ctrl+Shift+R il ignore le cache → réponse 200 OK.
