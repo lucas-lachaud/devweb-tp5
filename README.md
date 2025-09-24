@@ -230,3 +230,6 @@ alors qu'avec Ctrl+Shift+R on force pour recharge la page et on recois comme rep
 
 ## 2.7/
 
+Affichage dev : <img width="1920" height="434" alt="image" src="https://github.com/user-attachments/assets/2238b379-5539-4a63-a0ae-de9a104b1982" />
+
+Affichage prod : <img width="1764" height="347" alt="image" src="https://github.com/user-attachments/assets/f6327c72-63bd-4269-aa18-d2c05888e404" />
