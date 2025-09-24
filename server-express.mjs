@@ -1,5 +1,7 @@
 import express from "express";
 import morgan from "morgan";
+import createError from "http-errors";
+
 
 const host = "localhost";
 const port = 5000;
@@ -13,7 +15,12 @@ app.use(express.static("static"));
 app.set("view engine", "ejs");
 
 app.get("/random/:nb", async function (request, response, next) {
-  const length = parseInt(request.params.nb, 10);
+    const length = Number.parseInt(request.params.nb, 10);
+
+  if (Number.isNaN(length)) {
+    return next(createError(400, "Le paramètre doit être un nombre"));
+  }
+
   const numbers = Array.from({ length }, () => Math.floor(Math.random() * 100));
   const welcome = "Nombres random :";
   response.render("random", { numbers, welcome });
