@@ -1,6 +1,4 @@
-# Serveur HTTP Node.js - Du serveur natif à Express
-
-Ce projet explore la création de serveurs HTTP avec Node.js, en commençant par un serveur HTTP natif puis en migrant vers Express.js.
+# TP5 DEVWEB
 
 ## 1. Serveur HTTP Natif
 
