@@ -1,8 +1,8 @@
 # TP5 DEVWEB
 
-## 1. Serveur HTTP Natif
+## 1. Serveur HTTP natif Node.js
 
-### 1.1/ En-têtes de réponse basiques
+### 1.1/ Donner la liste des en-têtes de la réponse HTTP du serveur.
 ```txt
 Content-Type: application/json
 Date: Mon, 22 Sep 2025 03:07:26 GMT
@@ -11,7 +11,7 @@ Keep-Alive: timeout=5
 Content-Length: 20
 ```
 
-### 1.2/ Réponse HTTP 200 OK
+### 1.2/ Donner la liste des en-têtes qui ont changé depuis la version précédente.
 ```txt
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -21,10 +21,11 @@ Keep-Alive: timeout=5
 Content-Length: 20
 ```
 
-### 1.3/ Gestion des fichiers manquants
+### 1.3/ Que contient la réponse reçue par le client ?
+
 Le fichier est introuvable donc le client ne reçoit pas de réponse.
 
-### 1.4/ Gestion d'erreur ENOENT avec Promise
+### 1.4/ Quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché.
 ```js
 Error: ENOENT: no such file or directory, open 'index.html'
     at async open (node:internal/fs/promises:641:25)
@@ -64,7 +65,7 @@ server.listen(port, host, () => {
 });
 ```
 
-### 1.5/ Refactorisation avec async/await
+### 1.5/ Donner le code de requestListener() modifié avec gestion d’erreur en async/await.
 
 **Version améliorée avec async/await :**
 ```js
@@ -93,7 +94,7 @@ server.listen(port, host, () => {
 });
 ```
 
-### 1.6/ Configuration des scripts npm
+### 1.6/ Indiquer ce que cette commande a modifié dans votre projet.
 
 **Ajout dans package.json :**
 
@@ -128,24 +129,24 @@ Par :
 },
 ```
 
-### 1.7/ Différences entre les environnements
+### 1.7/ Quelles sont les différences entre les scripts http-dev et http-prod ?
 
 - **http-dev** : utilise `nodemon` qui permet le rechargement automatique du serveur quand on modifie le code, et définit `NODE_ENV` à "development"
 - **http-prod** : utilise `node` standard sans rechargement automatique et définit `NODE_ENV` à "production"
 
 En développement, nodemon redémarre le serveur automatiquement quand on sauvegarde des modifications, ce qui facilite les tests. En production, on utilise node standard pour plus de stabilité et de performance.
 
-### 1.8/ Tests de routage
+### 1.8/ Donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
 
 **Résultats des tests :**
-- `http://localhost:8000/index.html` → bonjour 
-- `http://localhost:8000/random.html` → 57
-- `http://localhost:8000/` → 404: NOT FOUND
-- `http://localhost:8000/dont-exist` → 404: NOT FOUND
+- `http://localhost:8000/index.html` = bonjour 
+- `http://localhost:8000/random.html` = 57
+- `http://localhost:8000/` = 404: NOT FOUND
+- `http://localhost:8000/dont-exist` = 404: NOT FOUND
 
-## 2. Migration vers Express.js
+## 2. Framework Express
 
-### 2.1/ Documentation des packages utilisés
+### 2.1/ Donner les URL des documentations de chacun des modules installés par la commande précédente.
 
 **Packages Express principaux :**
 - **express** : https://expressjs.com/en/guide/routing.html
@@ -153,7 +154,7 @@ En développement, nodemon redémarre le serveur automatiquement quand on sauveg
 - **loglevel** : https://www.npmjs.com/package/loglevel
 - **morgan** : https://www.npmjs.com/package/morgan
 
-### 2.2/ Interface d'administration
+### 2.2/ Vérifier que les trois routes fonctionnent.
 
 Screenshots de l'interface d'administration :
 
@@ -163,7 +164,7 @@ Screenshots de l'interface d'administration :
 
 <img width="1276" height="655" alt="Interface d'administration - Vue 3" src="https://github.com/user-attachments/assets/a87cd81a-d972-48e2-84bb-010b81f32ffa" />
 
-### 2.3/ Analyse des en-têtes HTTP Express
+### 2.3/ Lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
 
 **http://localhost:5000/** (304 Not Modified)
 ```txt
@@ -208,20 +209,20 @@ Keep-Alive: timeout=5
 - `Content-Security-Policy`  
 - `X-Content-Type-Options`
 
-### 2.4/ Événement listening
+### 2.4/ Quand l’événement listening est-il déclenché ?
 
 L'événement `listening` est déclenché dès que le serveur commence à écouter avec succès sur le port et l'adresse spécifiés. Cela signifie que le serveur est prêt à accepter des connexions entrantes.
 
-### 2.5/ Comportement par défaut d'Express pour "/"
+### 2.5/ Indiquer quelle est l’option (activée par défaut) qui redirige / vers /index.html ?
 
 C'est l'option `index` qui a comme valeur par défaut `index.html` du middleware `express.static` qui fait que l'URL "/" redirige vers le fichier index.html.
 
-### 2.6/ Gestion du cache navigateur
+### 2.6/ Visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
 
 - **Ctrl+R** : le navigateur utilise le cache donc on a une réponse `304 Not Modified`
 - **Ctrl+Shift+R** : on force le rechargement de la page et on reçoit comme réponse `200 OK`
 
-### 2.7/ Comparaison des logs de développement vs production
+### 2.7/ Vérifier que l’affichage change bien entre le mode production et le mode development.
 
 **Affichage dev :**
 <img width="1920" height="434" alt="Logs en mode développement" src="https://github.com/user-attachments/assets/2238b379-5539-4a63-a0ae-de9a104b1982" />
